@@ -1,0 +1,18 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/interrogation.rpy", line 31: expected statement.
+    line = ""
+         ^
+
+File "game/interrogation.rpy", line 105: expected statement.
+    line = ""
+         ^
+
+File "game/interrogation.rpy", line 195: expected statement.
+    line = ""
+         ^
+
+Ren'Py Version: Ren'Py 8.2.1.24030407
+Sat Apr  6 00:56:43 2024
