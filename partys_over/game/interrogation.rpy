@@ -91,14 +91,14 @@ label int_sheriff:
         sheriff_ques_4 = False
         sheriff_ques_5 = False
 
-        coll_vynil = False
+        coll_vinyl = False
 
     centered "Police Station - Sheriff's Office"
 
     pause 2
 
     $ first_line = False
-    $ line = "So… Did you find out something interesting?"
+    $ line = "So... Did you find out something interesting?"
 
     while tolerance > 0:
         if first_line:
@@ -141,7 +141,7 @@ label int_sheriff:
                 python:
                     tolerance -= 1
                     sheriff_ques_3 = True
-            "What is \"Dehydrate Division\"?" if coll_vynil and not sheriff_ques_4:
+            "What is \"Dehydrate Division\"?" if coll_vinyl and not sheriff_ques_4:
                 if not first_line:
                     $ first_line = True
                 if sheriff_ques_2:
@@ -200,16 +200,16 @@ label int_angela:
             "Do you like to film things?" if not angela_ques_1:
                 if not first_line:
                     $ first_line = True
-                sus "Yeah… I'm like an ambulant cassette recorder…"
-                sus "Got some pretty weird stuff recorded too…"
+                sus "Yeah... I'm like an ambulant cassette recorder..."
+                sus "Got some pretty weird stuff recorded too..."
                 python:
                     tolerance -= 1
                     angela_ques_1 = True
             "What do you remember from yesterday?" if not angela_ques_2:
                 if not first_line:
                     $ first_line = True
-                sus "Well, it scared the hell out of me…"
-                sus "I recorded some audio, if it's useful…"
+                sus "Well, it scared the hell out of me..."
+                sus "I recorded some audio, if it's useful..."
                 centered "Obtained \033[1;31mAngela's Cassette #1"
                 python:
                     tolerance -= 1
@@ -217,7 +217,7 @@ label int_angela:
             "Do you have anyone suspicious in mind?" if not angela_ques_3:
                 if not first_line:
                     $ first_line = True
-                sus "No one at all… But I think this dead guy was at Faith Coombs' house last year's Halloween."
+                sus "No one at all... But I think this dead guy was at Faith Coombs' house last year's Halloween."
                 sus "I wasn't at the party, but it's literally the house in front to mine."
                 python:
                     tolerance -= 1
@@ -238,17 +238,19 @@ label int_angela:
                 if not angela_ques_3:
                     sus "Faith Coombs lives at the other side of the street."
                 sus "People call me crazy, but I could swear I saw a girl falling from the house's roof."
-                sus "Also, I've never seen any car hitting Freddie Hayes…"
+                sus "Also, I've never seen any car hitting Freddie Hayes..."
                 python:
                     tolerance -= 1
                     angela_ques_5 = True
             "How do you feel about living here?" if not angela_ques_6:
                 if not first_line:
                     $ first_line = True
-                sus "It's quiet, but… Kinda scary sometimes…"
+                sus "It's quiet, but... Kinda scary sometimes..."
                 python:
                     tolerance -= 1
                     angela_ques_6 = True
+            "--Finish Interrogation--":
+                $ tolerance = 0
 
 label int_faith:
 
@@ -268,6 +270,8 @@ label int_faith:
         faith_ques_9 = False
         faith_ques_10 = False
 
+        know_faith = True
+
         know_rowan = False
         know_seth = False
         know_melvin = False
@@ -285,107 +289,237 @@ label int_faith:
     while tolerance > 0:
         if first_line:
             $ line = ""
-    menu:
-        sus "[line]"
-        "Do you live alone?" if not faith_ques_1:
-            if not first_line:
-                $ first_line = True
-            sus "I live with my older brother."
-            sus "He might know something interesting, but be careful."
-            sus "He barely talks to me, I don't think he'll enjoy talking to you."
-            sus "My parents left us the house and moved with my younger brother."
-            python:
-                tolerance -= 1
-                faith_ques_1 = True
-                know_seth = True
-        "Whose car is that on your garage?" if not faith_ques_2:
-            if not first_line:
-                $ first_line = True
-            sus "Oh, it's Rowan's."
-            python:
-                tolerance -= 1
-                faith_ques_2 = True
-                know_rowan = True
-        "Do you know someone who was close to any of the missing people from last year?" if not faith_ques_3 and (talk_sheriff_2 or sheriff_ques_2 or faith_ques_5):
-            if not first_line:
-                $ first_line = True
-            sus "Me, I guess..."
-            sus "But if it's not enough..."
-            sus "Well, there's Finn..."
-            sus "Finneas Copeland."
-            sus "I don't think he'll cooperate, though."
-            sus "You should try Melvin, even though I didn't invite him to the party."
-            sus "He lives 3 blocks away."
-            sus "Melvin M. Tores."
-            python:
-                tolerance -= 2
-                faith_ques_3 = True
-                know_melvin = True
-        "Do you know someone who was close to Freddie Hayes and I could interrogate?" if not faith_ques_4 and sheriff_ques_3:
-            if not first_line:
-                $ first_line = True
-            sus "Well, there's Kimberlyn, her girlfriend at the time."
-            sus "She lives in another state, so you can try calling her."
-            sus "Here, I'll give you her number."
-            python:
-                tolerance -= 2
-                faith_ques_4 = True
-                know_kimberlyn = True
-        "What exactly happened at the party a year ago?" if not faith_ques_5 and (talk_sheriff_2 or sheriff_ques_2):
-            if not first_line:
-                $ first_line = True
-            sus "And here we go again..."
-            sus "It was an ordinary Halloween party, to celebrate my 18th birthday."
-            sus "Had a heartbreak, got so fucking pissed with some people, and of course things wouldn't end well."
-            sus "The midnight game started."
-            sus "Some people were still smoking weed, others still drinking."
-            sus "Then when it all ended, Tommy and Ari went missing, and Freddie... {p=1} Yeah..."
-            python:
-                tolerance -= 3
-                faith_ques_5 = True
-        "How do you know Angela G. Reeds?" if not faith_ques_6:
-            if not first_line:
-                $ first_line = True
-            sus "Who?"
-            python:
-                tolerance += 2
-                faith_ques_6 = True
-        "Who planned the games you were playing?" if not faith_ques_7 and faith_ques_5:
-            if not first_line:
-                $ first_line = True
-            sus "The midnight game?"
-            sus "It was Sarah."
-            sus "Sarah Barber."
-            sus "She is... {p=1} Was... {p=1} My friend."
-            sus "Now she's just my brother's girlfriend."
-            python:
-                tolerance += 1
-                faith_ques_7 = True
-                know_sarah = True
-        "What kind of relation did you have with the missing people?" if not faith_ques_8 and (talk_sheriff_2 or sheriff_ques_2 or faith_ques_5):
-            if not first_line:
-                $ first_line = True
-                sus "I was a very close friend of them both."
-                sus "They started dating because I was the one to introduce them."
+        menu:
+            sus "[line]"
+            "Do you live alone?" if not faith_ques_1:
+                if not first_line:
+                    $ first_line = True
+                sus "I live with my older brother."
+                sus "He might know something interesting, but be careful."
+                sus "He barely talks to me, I don't think he'll enjoy talking to you."
+                sus "My parents left us the house and moved with my younger brother."
+                python:
+                    tolerance -= 1
+                    faith_ques_1 = True
+                    know_seth = True
+            "Whose car is that on your garage?" if not faith_ques_2:
+                if not first_line:
+                    $ first_line = True
+                sus "Oh, it's Rowan's."
+                python:
+                    tolerance -= 1
+                    faith_ques_2 = True
+                    know_rowan = True
+            "Do you know someone who was close to any of the missing people from last year?" if not faith_ques_3 and (talk_sheriff_2 or sheriff_ques_2 or faith_ques_5):
+                if not first_line:
+                    $ first_line = True
+                sus "Me, I guess..."
+                sus "But if it's not enough..."
+                sus "Well, there's Finn..."
+                sus "Finneas Copeland."
+                sus "I don't think he'll cooperate, though."
+                sus "You should try Melvin, even though I didn't invite him to the party."
+                sus "He lives 3 blocks away."
+                sus "Melvin M. Tores."
                 python:
                     tolerance -= 2
-                    faith_ques_8 = True
-        "Tell me about Finneas Copeland" if not faith_ques_9 and faith_ques_3:
-            if not first_line:
-                $ first_line = True
-            sus "I mean, don't get me wrong, he's a nice guy..."
-            sus "But Tommy is a delicate subject to him, so be patient..."
-            python:
-                tolerance += 2
-                faith_ques_9 = True
-                know_finn = True
-        "What were you doing in Frederich's car's passenger's seat?" if not faith_ques_10 and faith_ques_5:
-            if not first_line:
-                $ first_line = True
-            sus "Let's say the midnight game went kinda wrong."
-            sus "Some people were too high too."
-            sus "He tried to take me out of the house with him."
-            sus "I don't remember anything after getting in the car."
-            python:
-                tolerance -= 1
-                faith_ques_10 = True
+                    faith_ques_3 = True
+                    know_melvin = True
+            "Do you know someone who was close to Freddie Hayes and I could interrogate?" if not faith_ques_4 and sheriff_ques_3:
+                if not first_line:
+                    $ first_line = True
+                sus "Well, there's Kimberlyn, her girlfriend at the time."
+                sus "She lives in another state, so you can try calling her."
+                sus "Here, I'll give you her number."
+                python:
+                    tolerance -= 2
+                    faith_ques_4 = True
+                    know_kimberlyn = True
+            "What exactly happened at the party a year ago?" if not faith_ques_5 and (talk_sheriff_2 or sheriff_ques_2):
+                if not first_line:
+                    $ first_line = True
+                sus "And here we go again..."
+                sus "It was an ordinary Halloween party, to celebrate my 18th birthday."
+                sus "Had a heartbreak, got so fucking pissed with some people, and of course things wouldn't end well."
+                sus "The midnight game started."
+                sus "Some people were still smoking weed, others still drinking."
+                sus "Then when it all ended, Tommy and Ari went missing, and Freddie... {p=1} Yeah..."
+                python:
+                    tolerance -= 3
+                    faith_ques_5 = True
+            "How do you know Angela G. Reeds?" if not faith_ques_6:
+                if not first_line:
+                    $ first_line = True
+                sus "Who?"
+                python:
+                    tolerance += 2
+                    faith_ques_6 = True
+            "Who planned the games you were playing?" if not faith_ques_7 and faith_ques_5:
+                if not first_line:
+                    $ first_line = True
+                sus "The midnight game?"
+                sus "It was Sarah."
+                sus "Sarah Barber."
+                sus "She is... {p=1} Was... {p=1} My friend."
+                sus "Now she's just my brother's girlfriend."
+                python:
+                    tolerance += 1
+                    faith_ques_7 = True
+                    know_sarah = True
+            "What kind of relation did you have with the missing people?" if not faith_ques_8 and (talk_sheriff_2 or sheriff_ques_2 or faith_ques_5):
+                if not first_line:
+                    $ first_line = True
+                    sus "I was a very close friend of them both."
+                    sus "They started dating because I was the one to introduce them."
+                    python:
+                        tolerance -= 2
+                        faith_ques_8 = True
+            "Tell me about Finneas Copeland" if not faith_ques_9 and faith_ques_3:
+                if not first_line:
+                    $ first_line = True
+                sus "I mean, don't get me wrong, he's a nice guy..."
+                sus "But Tommy is a delicate subject to him, so be patient..."
+                python:
+                    tolerance += 2
+                    faith_ques_9 = True
+                    know_finn = True
+            "What were you doing in Frederich's car's passenger's seat?" if not faith_ques_10 and faith_ques_5:
+                if not first_line:
+                    $ first_line = True
+                sus "Let's say the midnight game went kinda wrong."
+                sus "Some people were too high too."
+                sus "He tried to take me out of the house with him."
+                sus "I don't remember anything after getting in the car."
+                python:
+                    tolerance -= 1
+                    faith_ques_10 = True
+            "--Finish Interrogation--":
+                $ tolerance = 0
+
+label int_rowan:
+
+    python:
+
+        curr_sus = "Rowan Long"
+        tolerance = 3
+
+        rowan_ques_1 = False
+        rowan_ques_2 = False
+        rowan_ques_3 = False
+        rowan_ques_4 = False
+
+        if know_faith == None:
+            know_faith = False
+        
+    centered "Coombs' House"
+
+    pause 2.0
+
+    $ first_line = False
+    $ line = "Oh, can I help you?"
+
+    while tolerance > 0:
+        if first_line:
+            $ line = ""
+        menu:
+            sus "[line]"
+            "Does Faith Coombs live here?" if not rowan_ques_1 and know_faith:
+                if not first_line:
+                    $ first_line = True
+                sus "Oh, yes, she's watching TV on the couch right now."
+                python:
+                    tolerance -= 1
+                    rowan_ques_1 = True
+            "Did you notice anything weird yesterday?" if not rowan_ques_2:
+                if not first_line:
+                    $ first_line = True
+                sus "Well, my guitar was gone..."
+                sus "That got me pissed off."
+                python:
+                    tolerance -= 1
+                    rowan_ques_2 = True
+            "Tell me about your guitar." if not rowan_ques_3 and rowan_ques_2:
+                if not first_line:
+                    $ first_line = True
+                sus "Oh, it's a black Les Paul."
+                sus "It sounds like a freakshow."
+                sus "I bought it at Prism Music Store."
+                python:
+                    tolerance += 1
+                    rowan_ques_3 = True
+            "What do you think about Dehydrate Division?" if not rowan_ques_4 and coll_vinyl and rowan_ques_2:
+                if not first_line:
+                    $ first_line = True
+                sus "Rest in peace, Freddie..."
+                sus "I wonder what happened to Tommy..."
+                sus "The band was absurdly good."
+                sus "I always felt insecure to ask them if I could join."
+                sus "Do you think The Midnight Man took Tommy and Ari?"
+                python:
+                    tolerance -= 2
+                    rowan_ques_4 = True
+            "--Finish Interrogation--":
+                $ tolerance = 0
+
+label int_seth:
+
+    python:
+        
+        curr_sus = "Seth Coombs"
+        tolerance = 2
+
+        seth_ques_1 = False
+        seth_ques_2 = False
+        seth_ques_3 = False
+        seth_ques_4 = False
+
+    centered "Seth's Bedroom"
+        
+    pause 2
+
+    $ first_line = False
+    $ line = "What?"
+
+    while tolerance > 0:
+        if first_line:
+            $ line = ""
+        menu:
+            sus "[line]"
+            "Did you notice anything weird yesterday?" if not seth_ques_1:
+                if not first_line:
+                    $ first_line = True
+                sus "Some weird noises like someone was here."
+                sus "Tried to check but didn't see a thing."
+                sus "Also, for some reason, a piece of the lawn outside died."
+                sus "I think it was just the place that..."
+                sus "Nevermind..."
+                python:
+                    tolerance -= 1
+                    seth_ques_1 = True
+            "What do you think about Dehydrate Division?" if not seth_ques_2 and coll_vinyl:
+                if not first_line:
+                    $ first_line = True
+                sus "Shitty band."
+                python:
+                    tolerance -= 1
+                    seth_ques_2 = True
+            "Do you know Angela G. Reeds?" if not seth_ques_3 and faith_ques_6:
+                if not first_line:
+                    $ first_line = True
+                sus "The freak that lives in front of us?"
+                sus "I don't, but Kian may know something."
+                sus "Name's Kian Hayden."
+                python:
+                    tolerance -= 1
+                    seth_ques_3 = True
+            "Tell me about Sarah Barber" if not seth_ques_4 and faith_ques_7:
+                if not first_line:
+                    $ first_line = True
+                sus "Why should I?"
+                sus "It's my girlfriend."
+                sus "What do you want?"
+                python:
+                    tolerance -= 1
+                    seth_ques_4 = True
+            "--Finish Interrogation--":
+                $ tolerance = 0
