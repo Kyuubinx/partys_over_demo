@@ -523,3 +523,307 @@ label int_seth:
                     seth_ques_4 = True
             "--Finish Interrogation--":
                 $ tolerance = 0
+
+label int_ruben:
+    
+    python:
+        
+        curr_sus = "Ruben J. Waters"
+        tolerance = 3
+
+        ruben_ques_1 = False
+        ruben_ques_2 = False
+        ruben_ques_3 = False
+        ruben_ques_4 = False
+        ruben_ques_5 = False
+
+    centered "Prism Music Store"
+        
+    pause 2
+
+    $ first_line = False
+    $ line = "How can I help you?"
+
+    while tolerance > 0:
+        if first_line:
+            $ line = ""
+        menu:
+            sus "[line]"
+            "" if not []_ques_1:
+                if not first_line:
+                    $ first_line = True
+                sus "Why should I?"
+                sus "It's my girlfriend."
+                sus "What do you want?"
+                python:
+                    tolerance -= 1
+                    seth_ques_4 = True
+            "" if not []_ques_1:
+                if not first_line:
+                    $ first_line = True
+                sus "Why should I?"
+                sus "It's my girlfriend."
+                sus "What do you want?"
+                python:
+                    tolerance -= 1
+                    seth_ques_4 = True
+            "" if not []_ques_1:
+                if not first_line:
+                    $ first_line = True
+                sus "Why should I?"
+                sus "It's my girlfriend."
+                sus "What do you want?"
+                python:
+                    tolerance -= 1
+                    seth_ques_4 = True
+            "" if not []_ques_1:
+                if not first_line:
+                    $ first_line = True
+                sus "Why should I?"
+                sus "It's my girlfriend."
+                sus "What do you want?"
+                python:
+                    tolerance -= 1
+                    seth_ques_4 = True
+            "" if not []_ques_1:
+                if not first_line:
+                    $ first_line = True
+                sus "Why should I?"
+                sus "It's my girlfriend."
+                sus "What do you want?"
+                python:
+                    tolerance -= 1
+                    seth_ques_4 = True
+            "--Finish Interrogation--":
+                $ tolerance = 0
+
+label int_kevin:
+        
+    python:
+        
+        curr_sus = "Kevin E. Richardson"
+        tolerance = 3
+
+        kevin_ques_1 = False
+        kevin_ques_2 = False
+        kevin_ques_3 = False
+        kevin_ques_4 = False
+        kevin_ques_5 = False
+
+    centered "Richardson's Bar"
+        
+    pause 2
+
+    $ first_line = False
+    $ line = "Welcome."
+
+    while tolerance > 0:
+        if first_line:
+            $ line = ""
+        menu:
+            sus "[line]"
+            "" if not []_ques_1:
+                if not first_line:
+                    $ first_line = True
+                sus "Why should I?"
+                sus "It's my girlfriend."
+                sus "What do you want?"
+                python:
+                    tolerance -= 1
+                    seth_ques_4 = True
+            "" if not []_ques_1:
+                if not first_line:
+                    $ first_line = True
+                sus "Why should I?"
+                sus "It's my girlfriend."
+                sus "What do you want?"
+                python:
+                    tolerance -= 1
+                    seth_ques_4 = True
+            "" if not []_ques_1:
+                if not first_line:
+                    $ first_line = True
+                sus "Why should I?"
+                sus "It's my girlfriend."
+                sus "What do you want?"
+                python:
+                    tolerance -= 1
+                    seth_ques_4 = True
+            "" if not []_ques_1:
+                if not first_line:
+                    $ first_line = True
+                sus "Why should I?"
+                sus "It's my girlfriend."
+                sus "What do you want?"
+                python:
+                    tolerance -= 1
+                    seth_ques_4 = True
+            "" if not []_ques_1:
+                if not first_line:
+                    $ first_line = True
+                sus "Why should I?"
+                sus "It's my girlfriend."
+                sus "What do you want?"
+                python:
+                    tolerance -= 1
+                    seth_ques_4 = True
+            "--Finish Interrogation--":
+                $ tolerance = 0
+
+label int_kimberlyn:
+    
+    python:
+        
+        curr_sus = "Kimberlyn G. Buffington"
+        tolerance = 3
+
+        kimberlyn_ques_1 = False
+        kimberlyn_ques_2 = False
+        kimberlyn_ques_3 = False
+        kimberlyn_ques_4 = False
+        kimberlyn_ques_5 = False
+        kimberlyn_ques_6 = False
+
+    centered "CALLING..."
+        
+    pause 2
+
+    $ first_line = False
+    $ line = "Hello?"
+
+    while tolerance > 0:
+        if first_line:
+            $ line = ""
+        menu:
+            sus "[line]"
+            "" if not []_ques_1:
+                if not first_line:
+                    $ first_line = True
+                sus "Why should I?"
+                sus "It's my girlfriend."
+                sus "What do you want?"
+                python:
+                    tolerance -= 1
+                    seth_ques_4 = True
+            "" if not []_ques_1:
+                if not first_line:
+                    $ first_line = True
+                sus "Why should I?"
+                sus "It's my girlfriend."
+                sus "What do you want?"
+                python:
+                    tolerance -= 1
+                    seth_ques_4 = True
+            "" if not []_ques_1:
+                if not first_line:
+                    $ first_line = True
+                sus "Why should I?"
+                sus "It's my girlfriend."
+                sus "What do you want?"
+                python:
+                    tolerance -= 1
+                    seth_ques_4 = True
+            "" if not []_ques_1:
+                if not first_line:
+                    $ first_line = True
+                sus "Why should I?"
+                sus "It's my girlfriend."
+                sus "What do you want?"
+                python:
+                    tolerance -= 1
+                    seth_ques_4 = True
+            "" if not []_ques_1:
+                if not first_line:
+                    $ first_line = True
+                sus "Why should I?"
+                sus "It's my girlfriend."
+                sus "What do you want?"
+                python:
+                    tolerance -= 1
+                    seth_ques_4 = True
+            "" if not []_ques_1:
+                if not first_line:
+                    $ first_line = True
+                sus "Why should I?"
+                sus "It's my girlfriend."
+                sus "What do you want?"
+                python:
+                    tolerance -= 1
+                    seth_ques_4 = True
+            "--Finish Interrogation--":
+                $ tolerance = 0
+
+label int_melvin:
+    
+    python:
+        
+        curr_sus = "Melvin M. Torres"
+        tolerance = 4
+
+        melvin_ques_1 = False
+        melvin_ques_2 = False
+        melvin_ques_3 = False
+        melvin_ques_4 = False
+        melvin_ques_5 = False
+
+    centered "Melvin's House"
+        
+    pause 2
+
+    $ first_line = False
+    $ line = "Good evening..."
+
+    while tolerance > 0:
+        if first_line:
+            $ line = ""
+        menu:
+            sus "[line]"
+            "" if not []_ques_1:
+                if not first_line:
+                    $ first_line = True
+                sus "Why should I?"
+                sus "It's my girlfriend."
+                sus "What do you want?"
+                python:
+                    tolerance -= 1
+                    seth_ques_4 = True
+            "" if not []_ques_1:
+                if not first_line:
+                    $ first_line = True
+                sus "Why should I?"
+                sus "It's my girlfriend."
+                sus "What do you want?"
+                python:
+                    tolerance -= 1
+                    seth_ques_4 = True
+            "" if not []_ques_1:
+                if not first_line:
+                    $ first_line = True
+                sus "Why should I?"
+                sus "It's my girlfriend."
+                sus "What do you want?"
+                python:
+                    tolerance -= 1
+                    seth_ques_4 = True
+            "" if not []_ques_1:
+                if not first_line:
+                    $ first_line = True
+                sus "Why should I?"
+                sus "It's my girlfriend."
+                sus "What do you want?"
+                python:
+                    tolerance -= 1
+                    seth_ques_4 = True
+            "" if not []_ques_1:
+                if not first_line:
+                    $ first_line = True
+                sus "Why should I?"
+                sus "It's my girlfriend."
+                sus "What do you want?"
+                python:
+                    tolerance -= 1
+                    seth_ques_4 = True
+            "--Finish Interrogation--":
+                $ tolerance = 0
+                
+    
