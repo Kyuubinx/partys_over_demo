@@ -549,48 +549,48 @@ label int_ruben:
             $ line = ""
         menu:
             sus "[line]"
-            "" if not []_ques_1:
+            "Did you ever sell to Dehydrate Division?" if not ruben_ques_1 and coll_vinyl:
                 if not first_line:
                     $ first_line = True
-                sus "Why should I?"
-                sus "It's my girlfriend."
-                sus "What do you want?"
+                sus "Yeah, I'd say all their gear comes from here."
+                sus "Instruments, amplifiers, pedals, everything."
+                sus "Those boys spent four years working to get everything they had from here."
+                sus "I was so happy to see them growing."
+                sus "It's really sad that things turned out this way..."
                 python:
                     tolerance -= 1
-                    seth_ques_4 = True
-            "" if not []_ques_1:
+                    ruben_ques_1 = True
+            "What kind of people were they?" if not ruben_ques_2 and ruben_ques_1:
                 if not first_line:
                     $ first_line = True
-                sus "Why should I?"
-                sus "It's my girlfriend."
-                sus "What do you want?"
+                sus "They were really serene people."
+                sus "Never seen any of them passing off the limits."
+                sus "Not the kind of rock band who would get in toruble."
                 python:
                     tolerance -= 1
-                    seth_ques_4 = True
-            "" if not []_ques_1:
+                    ruben_ques_2 = True
+            "Show me the model you sold to Rowan" if not ruben_ques_3:
                 if not first_line:
                     $ first_line = True
-                sus "Why should I?"
-                sus "It's my girlfriend."
-                sus "What do you want?"
+                sus "Rowan Long?"
+                sus "Good kid."
+                sus "Sure, I think I still have that model."
                 python:
                     tolerance -= 1
-                    seth_ques_4 = True
-            "" if not []_ques_1:
+                    seth_ques_3 = True
+            "What's your relation with Joel Chatham?" if not ruben_ques_4:
                 if not first_line:
                     $ first_line = True
-                sus "Why should I?"
-                sus "It's my girlfriend."
-                sus "What do you want?"
+                sus "Well, the D.D. kids talked about him..."
+                sus "Never actually seen him."
+                sus "He was the only member who already had his gear, if you can actually call him a member."
                 python:
                     tolerance -= 1
-                    seth_ques_4 = True
-            "" if not []_ques_1:
+                    ruben_ques_4 = True
+            "Where were the places Dehydrate Division used to play at?" if not ruben_ques_5:
                 if not first_line:
                     $ first_line = True
-                sus "Why should I?"
-                sus "It's my girlfriend."
-                sus "What do you want?"
+                sus "They used to play at Richardon's Bar."
                 python:
                     tolerance -= 1
                     seth_ques_4 = True
