@@ -622,51 +622,46 @@ label int_kevin:
             $ line = ""
         menu:
             sus "[line]"
-            "" if not []_ques_1:
+            "What kind of people come to this bar?" if not kevin_ques_1:
                 if not first_line:
                     $ first_line = True
-                sus "Why should I?"
-                sus "It's my girlfriend."
-                sus "What do you want?"
+                sus "All sorts, friend."
+                sus "There's not really an answer."
                 python:
                     tolerance -= 1
-                    seth_ques_4 = True
-            "" if not []_ques_1:
+                    kevin_ques_1 = True
+            "Did Dehydrate Division play here before?" if not kevin_ques_2 and coll_vinyl:
                 if not first_line:
                     $ first_line = True
-                sus "Why should I?"
-                sus "It's my girlfriend."
-                sus "What do you want?"
+                sus "They were the most popular band of this bar."
+                sus "Almost every Saturday night they would come."
+                sus "It's sad that those nights had to end."
                 python:
                     tolerance -= 1
-                    seth_ques_4 = True
-            "" if not []_ques_1:
+                    kevin_ques_2 = True
+            "How did people act when Dehydrate Division played here?" if not kevin_ques_3 and kevin_ques_2:
                 if not first_line:
                     $ first_line = True
-                sus "Why should I?"
-                sus "It's my girlfriend."
-                sus "What do you want?"
+                sus "Never seen them more energetic."
+                sus "They surely had a future waiting for them."
                 python:
                     tolerance -= 1
-                    seth_ques_4 = True
-            "" if not []_ques_1:
+                    kevin_ques_3 = True
+            "What do you know about Joel Chatham?" if not kevin_ques_4:
                 if not first_line:
                     $ first_line = True
-                sus "Why should I?"
-                sus "It's my girlfriend."
-                sus "What do you want?"
+                sus "Lazy bass player."
+                sus "Never liked him."
                 python:
                     tolerance -= 1
-                    seth_ques_4 = True
-            "" if not []_ques_1:
+                    kevin_ques_4 = True
+            "How long is the bar working?" if not kevin_ques_5:
                 if not first_line:
                     $ first_line = True
-                sus "Why should I?"
-                sus "It's my girlfriend."
-                sus "What do you want?"
+                sus "Since the start of the 90's"
                 python:
                     tolerance -= 1
-                    seth_ques_4 = True
+                    kevin_ques_5 = True
             "--Finish Interrogation--":
                 $ tolerance = 0
 
@@ -696,60 +691,56 @@ label int_kimberlyn:
             $ line = ""
         menu:
             sus "[line]"
-            "" if not []_ques_1:
+            "How was your relation with Frederich?" if not kimberlyn_ques_1:
                 if not first_line:
                     $ first_line = True
-                sus "Why should I?"
-                sus "It's my girlfriend."
-                sus "What do you want?"
+                sus "It was cool."
+                sus "But I had to move on, right?"
+                sus "Guess I knew exactly how to move on."
                 python:
                     tolerance -= 1
-                    seth_ques_4 = True
-            "" if not []_ques_1:
+                    kimberlyn_ques_1 = True
+            "What kind of interaction did you have with Thomas Tinley?" if not kimberlyn_ques_2:
                 if not first_line:
                     $ first_line = True
-                sus "Why should I?"
-                sus "It's my girlfriend."
-                sus "What do you want?"
+                sus "..."
+                sus "Why is he important?"
                 python:
                     tolerance -= 1
-                    seth_ques_4 = True
-            "" if not []_ques_1:
+                    kimberlyn_ques_2 = True
+            "Where were you at the night of the party?" if not kimberlyn_ques_3:
                 if not first_line:
                     $ first_line = True
-                sus "Why should I?"
-                sus "It's my girlfriend."
-                sus "What do you want?"
+                sus "Well, I live in another state."
+                sus "Obviously, I was at my hometown."
                 python:
                     tolerance -= 1
-                    seth_ques_4 = True
-            "" if not []_ques_1:
+                    kimberlyn_ques_3 = True
+            "Are you dating someone now?" if not kimberlyn_ques_4:
                 if not first_line:
                     $ first_line = True
-                sus "Why should I?"
-                sus "It's my girlfriend."
-                sus "What do you want?"
+                sus "Yes."
+                sus "Clearence is just a cutie."
                 python:
                     tolerance -= 1
-                    seth_ques_4 = True
-            "" if not []_ques_1:
+                    kimberlyn_ques_4 = True
+            "How did you meet Frederich?" if not kimberlyn_ques_5:
                 if not first_line:
                     $ first_line = True
-                sus "Why should I?"
-                sus "It's my girlfriend."
-                sus "What do you want?"
+                sus "We met when he travelled to my hometown."
+                sus "We hung out and started talking."
                 python:
                     tolerance -= 1
-                    seth_ques_4 = True
-            "" if not []_ques_1:
+                    kimberlyn_ques_5 = True
+            "What do you know about Joel Chatham?" if not kimberlyn_ques_6:
                 if not first_line:
                     $ first_line = True
-                sus "Why should I?"
-                sus "It's my girlfriend."
-                sus "What do you want?"
+                sus "I didn't meet him actually."
+                sus "But Freddie never gave me a good impression of him."
+
                 python:
                     tolerance -= 1
-                    seth_ques_4 = True
+                    kimberlyn_ques_6 = True
             "--Finish Interrogation--":
                 $ tolerance = 0
 
