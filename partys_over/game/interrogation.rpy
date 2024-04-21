@@ -769,48 +769,46 @@ label int_melvin:
             $ line = ""
         menu:
             sus "[line]"
-            "" if not []_ques_1:
+            "Were you close to Dehydrate Division?" if not melvin_ques_1:
                 if not first_line:
                     $ first_line = True
-                sus "Why should I?"
-                sus "It's my girlfriend."
-                sus "What do you want?"
+                sus "Weren't too close to Freddie, but I was friends with Tommy."
+                sus "Wonder what happened to him..."
                 python:
                     tolerance -= 1
-                    seth_ques_4 = True
-            "" if not []_ques_1:
+                    melvin_ques_1 = True
+            "Where were you at the night of the party?" if not melvin_ques_2:
                 if not first_line:
                     $ first_line = True
-                sus "Why should I?"
-                sus "It's my girlfriend."
-                sus "What do you want?"
+                sus "Home."
+                sus "Faith didn't really invite me."
                 python:
                     tolerance -= 1
-                    seth_ques_4 = True
-            "" if not []_ques_1:
+                    melvin_ques_2 = True
+            "How was Thomas' relationship with Ariana?" if not melvin_ques_3 and melvin_ques_1 and faith_ques_8:
                 if not first_line:
                     $ first_line = True
-                sus "Why should I?"
-                sus "It's my girlfriend."
-                sus "What do you want?"
+                sus "Exceptionally better than with Sarah."
+                sus "Ari was good for Tommy, and I guess that's what matters the most."
                 python:
                     tolerance -= 1
-                    seth_ques_4 = True
-            "" if not []_ques_1:
+                    melvin_ques_3 = True
+            "How was Thomas' relationship with Sarah?" if not melvin_ques_4 and melvin_ques_3:
                 if not first_line:
                     $ first_line = True
-                sus "Why should I?"
-                sus "It's my girlfriend."
-                sus "What do you want?"
+                sus "Terrible."
+                sus "Toxic, unhealthy and everything bad."
+                sus "Good thing she found Seth, someone as toxic as her."
                 python:
                     tolerance -= 1
-                    seth_ques_4 = True
-            "" if not []_ques_1:
+                    melvin_ques_4 = True
+            "Tell me about Faith Coombs" if not melvin_ques_5:
                 if not first_line:
                     $ first_line = True
-                sus "Why should I?"
-                sus "It's my girlfriend."
-                sus "What do you want?"
+                sus "She's a nice person."
+                sus "We had some fights last year that ended up making her not invite me to the party."
+                sus "We didn't really talk about it, so I guess it stays the same."
+                sus "Happy 19th birthday, I guess."
                 python:
                     tolerance -= 1
                     seth_ques_4 = True
