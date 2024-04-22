@@ -25,4 +25,6 @@ label start:
     centered "Although, some people may be a little harder to read."
     centered "To finish the procedure, we have the third and last step, the report."
     centered "That's the step where we'll reunite all our clues, analyze it deeply, and try to come to a conclusion."
+    centered "However, for now, you will be designated only for the second step, the interrogations."
+    centered "Our local officers will search the crime scene and Sheriff Hadwin Salice will assist you on the report step, so you don't have to worry about it."
     centered "Thanks for your help, Officer [playerName]."
